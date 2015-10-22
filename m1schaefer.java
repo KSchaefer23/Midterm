@@ -165,8 +165,11 @@ void show() {
 }
 
 void mice() {
-  fill(255,255,255);
-  ellipse(100,height-60, 60,30);
+  fill(0,0,0);
+  ellipse(85,height-75,20,20);
+  ellipse(115,height-75,20,20);  
+  ellipse(100,height-60, 30,30);
+
 }
  
 void buttons() {
