@@ -82,7 +82,7 @@ void draw() {
 void keyPressed() {
   if (key == 'q') { exit();  }
   if (key == 'r') { reset(); }
-  if (key == 'w') { boolean wall=false; }
+  if (key == 'w') { wall=false; }
   if (key == 'p') { tableRed= 250; tableGreen=150; tableBlue=235; }
   if (key == 'm') { mice(); }
 }
@@ -118,6 +118,7 @@ void table( float east, float north, float west, float south ) {
 void bounce() {
   kingX += kingDX;  if ( kingX<left || kingX>right ) kingDX *= -1;
   kingY += kingDY;  if ( kingY<top || kingY>bottom ) kingDY *=  -1;
+  
   funX += funDX;    if ( funX<left || funX>right ) funDX *= -1;
   funY += funDY;    if ( funY<top || funY>bottom ) funDY *=  -1;
   songX += songDX;  if ( songX<left || songX>right ) songDX *= -1;
@@ -129,11 +130,8 @@ void bounce() {
   funY += funDY;    if ( funY<top || funY>bottom ) funDY *=  -1;
   songX += songDX;  if ( songX<left || songX>right ) songDX *= -1;
   songY += songDY;  if ( songY<top || songY>bottom ) songDY *=  -1;
+  }
   
-  //if (wall==true) {
-    //if 
-}
-
 void collisions() {
   float tmp;
     if ( dist( kingX,kingY, funX,funY ) < 30 ) {
@@ -169,10 +167,8 @@ void show() {
 void mice() {
   fill(255,255,255);
   ellipse(100,height-60, 60,30);
-  
 }
  
-
 void buttons() {
     //++++ ADD YOUR OWN CODE HERE. ++++
 }
