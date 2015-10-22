@@ -123,11 +123,11 @@ void bounce() {
   songX += songDX;  if ( songX<left || songX>right ) songDX *= -1;
   songY += songDY;  if ( songY<top || songY>bottom ) songDY *=  -1;
   
-  if (wall==true && kingX<middle+90) {
+  if (wall==true && kingX<middle+94) {
     kingDX *= -1; }
-  if (wall==true && funX<middle+90) {
+  if (wall==true && funX<middle+94) {
     funDX *= -1; }
-  if (wall==true && songX<middle+90) {
+  if (wall==true && songX<middle+94) {
     songDX *= -1; }
   }
   
