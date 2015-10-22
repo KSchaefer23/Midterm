@@ -51,7 +51,7 @@ void setup() {
  }
 
 void reset() {
-  boolean wall=true;
+  wall=true;
   //int score=0,m=0,k=0;
   tableRed=150; tableGreen=250; tableBlue=150;
   
