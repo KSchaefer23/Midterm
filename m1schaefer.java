@@ -56,9 +56,9 @@ void reset() {
   tableRed=150; tableGreen=250; tableBlue=150;
   
   // Set position for ball spawn
-  kingX= random(middle, right); kingY= random(top, bottom);
-  funX= random(middle, right); funY= random(top, bottom);
-  songX= random(middle, right); songY= random(top,bottom);
+  kingX= random(middle+100, right); kingY= random(top, bottom);
+  funX= random(middle+100, right); funY= random(top, bottom);
+  songX= random(middle+100, right); songY= random(top,bottom);
   
   // Set the speed for ball spawn
   kingDX=  random( -3,3 );   kingDY=  random( -3,3 );
@@ -122,6 +122,13 @@ void bounce() {
   funY += funDY;    if ( funY<top || funY>bottom ) funDY *=  -1;
   songX += songDX;  if ( songX<left || songX>right ) songDX *= -1;
   songY += songDY;  if ( songY<top || songY>bottom ) songDY *=  -1;
+  
+  if (wall==true && kingX<middle+90) {
+    kingDX *= -1; }
+  if (wall==true && funX<middle+90) {
+    funDX *= -1; }
+  if (wall==true && songX<middle+90) {
+    songDX *= -1; }
   }
   
 void collisions() {
