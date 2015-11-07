@@ -72,7 +72,7 @@ void reset() {
   songDX=  random( -3,3 );   songDY=  random( -3,3 );
 }
 
-//// NEXT FRAME:  table, bounce off walls, collisions, show all
+//// NEXT FRAME:  table, bounce off walls, butotns, collisions, show all
 void draw() {
   background( 250,250,200 );
   rectMode( CORNERS );
@@ -89,6 +89,7 @@ void draw() {
   if (key == 'm' && miceX >left ) { mice(); }
   if (miceclick = true && miceX > left) { mice(); }
   
+  // Buttons
   fill(255,255,255);
   text( "RESET", button1X+button1W/4, button1Y+button1H*5/8 );
   text( "WALL", button2X+button2W/3, button2Y+button2H*5/8 );
@@ -97,6 +98,7 @@ void draw() {
   
 }
 
+// Creates button
 void showButton( float x, float y, float w, float h ) {
   fill(255,175,0);
   rectMode( CORNER );
@@ -107,7 +109,7 @@ void showButton( float x, float y, float w, float h ) {
 void keyPressed() {
   if (key == 'q') { exit();  }
   if (key == 'r') { reset(); }
-  if (key == 'w') { wall=false; }
+  if (key == 'w') { wall=false; }  // removes wall
   if (key == 'p') { tableRed= 250; tableGreen=150; tableBlue=235; } // Turns table pink
   
   /// m starts mouse animation
@@ -132,6 +134,7 @@ void mouseClicked() {
   if ( dist(songX,songY, mouseX,mouseY) < 18) { songX= random(middle+40, right); songY= random(top, bottom); 
     songDX=  random( -3,3 );   songDY=  random( -3,3 );}
     
+/// Button functions: reset, no wall, pink, mouse    
   if ((mouseX) > (button1X) && (mouseX) < (button1X+button1W) &&
      (mouseY) > (button1Y) && (mouseY) < (button1Y+button1H)) {
        reset();
@@ -216,6 +219,7 @@ void show() {
   fill(255,255,255); text('3', songX-3,songY+4);
 }
 
+// Creates the mouse
 void mice() {
   if (miceX < right) {
     stroke(245,150,220);                          // tail
@@ -248,6 +252,7 @@ void mice() {
   }
 }
 
+// Display messages
 void messages() {
   fill(0);
   text( title, width/3, 15 );
